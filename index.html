@@ -94,6 +94,8 @@
                         <div class="dropdown-menu border-0 shadow-sm animate__animated animate__fadeIn">
                             <a class="dropdown-item" href="telecom.html">Telecom</a>
                             <a class="dropdown-item" href="embedded.html">Embedded Software</a>
+                            <a class="dropdown-item" href="telecom.html">Telecom</a>
+                            <a class="dropdown-item" href="embedded.html">AI Services</a>
                         </div>
                     </li>
 
@@ -785,7 +787,17 @@
 }
 
 </style>
-
+<div id="chatbotContainer"></div>
+<script>
+    fetch("chatbot.html")
+    .then(res => res.text())
+    .then(html => {
+        document.getElementById("chatbotContainer").innerHTML = html;
+        const script = document.createElement("script");
+        script.src = "chatbot.js";
+        document.body.appendChild(script);
+    });
+</script>
 
     <!-- Back to Top -->
     <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="fa fa-angle-double-up"></i></a>
